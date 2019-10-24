@@ -6,8 +6,8 @@
 //Access point credentials
 const char* ssid = "Pixel_2039";
 const char* pwd = "00000000";
-const char* host = "http://120.108.111.85";
-String get_host = "http://120.108.111.85";
+const char* host = "http://";//輸入ip
+String get_host = "http://";//輸入ip
 int curtain_auto_pin = 1;
 int curtain_motor_pin = 3;
 int gpio_0 = 0;
