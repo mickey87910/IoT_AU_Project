@@ -35,7 +35,7 @@ class HomeScreen extends React.Component {
   }
 }
 
-class SettingsScreen extends React.Component {
+class DatabaseScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -46,8 +46,22 @@ class SettingsScreen extends React.Component {
 }
 
 const TabNavigator = createBottomTabNavigator({
-  主頁面: HomeScreen,
-  歷史資料庫: SettingsScreen,
+  主頁面: {
+    screen:HomeScreen,
+    navigationOptions:{
+      tabBarIcon : ({tintColor}) =>(
+        <IconFA name="home" color={tintColor} size={32}></IconFA>
+      )
+    },
+  },
+  歷史資料庫: { 
+    screen:DatabaseScreen,
+    navigationOptions:{
+      tabBarIcon:({tintColor}) =>(
+        <IconFA name="database" color={tintColor} size={32}></IconFA>
+      )
+    }
+  }
 });
 const styles = StyleSheet.create({
   top:{
