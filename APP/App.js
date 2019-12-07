@@ -12,7 +12,7 @@ class HomeScreen extends React.Component {
       temperature_current : "",
       humidity_current : "",
       time_current : "",
-      server_status_current : "red",
+      server_status_current : "gray",
     }
   }
   async getCurrentData(){
@@ -40,7 +40,6 @@ class HomeScreen extends React.Component {
                 })
             })
             .catch((error) => {
-                console.error(error);
                 this.setState({
                   server_status_current : "red",
                 })
@@ -130,7 +129,7 @@ class DatabaseScreen extends React.Component {
                 })
             })
             .catch((error) => {
-                console.error(error);
+                
             });
   };
   componentDidMount(){
