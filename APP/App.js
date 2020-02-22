@@ -1,10 +1,11 @@
 import React from 'react';
-import { Text, View,StyleSheet,StatusBar} from 'react-native';
+import { Text, View,StyleSheet} from 'react-native';
 import { createAppContainer} from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import IconFA from 'react-native-vector-icons/FontAwesome';
 import IconMCI from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Grid,Row,Col} from 'react-native-easy-grid';
+
 class HomeScreen extends React.Component {
   constructor(props) {
     super(props)
@@ -89,7 +90,7 @@ class HomeScreen extends React.Component {
             <Text>狀態：正常/異常</Text>
           </Row>
           <Row size={55}>
-            <Text>接收到的id為{this.state.id}</Text>
+            <Text>未定區域</Text>
           </Row>
         </Grid>
       </View>
@@ -103,6 +104,7 @@ class DatabaseScreen extends React.Component {
     this.state = {
       temperature_history : "",
       humidity_history : "",
+      data_history:"",
     }
   }
   async getHistoryData(){
@@ -124,8 +126,9 @@ class DatabaseScreen extends React.Component {
                 console.log(humi)
                 console.log(count)
                 this.setState({
-                  temperature_history:temp,
-                  humidity_history:humi,
+                  temperature_history : temp,
+                  humidity_history : humi,
+                  data_history : responseJson.data,
                 })
             })
             .catch((error) => {
